@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Senha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="pagina">
+    <div class="container">
+
+      <h1>Gerador de Senha</h1>
+      <p class="subtitulo">Crie senhas seguras e aleatórias</p>
+
+      <!-- CAIXA DA SENHA GERADA -->
+      <div class="caixa-senha">
+        <span id="senha">Clique em gerar</span>
+        <button id="btn-copiar" onclick="copiar()" title="Copiar senha">
+          📋
+        </button>
+      </div>
+
+      <!-- INDICADOR DE FORÇA -->
+      <div class="forca-container">
+        <div class="barras-forca">
+          <div class="barra" id="barra1"></div>
+          <div class="barra" id="barra2"></div>
+          <div class="barra" id="barra3"></div>
+          <div class="barra" id="barra4"></div>
+        </div>
+        <span id="texto-forca">Força: —</span>
+      </div>
+
+      <!-- MENSAGEM DE COPIADO -->
+      <p id="msg-copiado" class="msg-copiado"></p>
+
+      <!-- OPÇÕES -->
+      <div class="opcoes">
+
+        <!-- Slider de tamanho -->
+        <div class="opcao-tamanho">
+          <label for="tamanho">
+            Tamanho da senha:
+            <strong id="valor-tamanho">16</strong> caracteres
+          </label>
+          <input
+            type="range"
+            id="tamanho"
+            min="6"
+            max="32"
+            value="16"
+            oninput="atualizarTamanho()"
+          />
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="checkboxes">
+          <label class="checkbox-item">
+            <input type="checkbox" id="maiusculas" checked />
+            Letras maiúsculas (A-Z)
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="minusculas" checked />
+            Letras minúsculas (a-z)
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="numeros" checked />
+            Números (0-9)
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="simbolos" checked />
+            Símbolos (!@#$%...)
+          </label>
+        </div>
+
+      </div>
+
+      <!-- BOTÃO GERAR -->
+      <button class="btn-gerar" onclick="gerarSenha()">
+        🔄 Gerar nova senha
+      </button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+/* ===========================
+   VARIÁVEIS
+   =========================== */
+:root {
+  --cor-primaria: #4A90D9;
+  --cor-primaria-hover: #357abd;
+  --cor-fundo: #f0f4f8;
+  --cor-branco: #ffffff;
+  --cor-texto: #1a1a2e;
+  --cor-texto-claro: #666;
+  --cor-borda: #dde3ea;
+  --cor-fraca: #e74c3c;
+  --cor-media: #f39c12;
+  --cor-boa: #2ecc71;
+  --cor-forte: #27ae60;
+  --raio: 12px;
+  --transicao: 0.2s ease;
+}
+
+/* ===========================
+   RESET E BASE
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--cor-fundo);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===========================
+   CONTAINER PRINCIPAL
+   =========================== */
+.pagina {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.container {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  padding: 2rem;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  color: var(--cor-texto-claro);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===========================
+   CAIXA DA SENHA
+   =========================== */
+.caixa-senha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #f8fafc;
+  border: 2px dashed var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#senha {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  word-break: break-all;
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+#btn-copiar {
+  background: transparent;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background var(--transicao), transform var(--transicao);
+  flex-shrink: 0;
+}
+
+#btn-copiar:hover {
+  background: var(--cor-fundo);
+}
+
+#btn-copiar:active {
+  transform: scale(0.92);
+}
+
+/* ===========================
+   INDICADOR DE FORÇA
+   =========================== */
+.forca-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.barras-forca {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.barra {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--cor-borda);
+  transition: background var(--transicao);
+}
+
+#texto-forca {
+  font-size: 0.85rem;
+  color: var(--cor-texto-claro);
+  white-space: nowrap;
+  min-width: 100px;
+  text-align: right;
+}
+
+/* ===========================
+   MENSAGEM DE COPIADO
+   =========================== */
+.msg-copiado {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #27ae60;
+  font-weight: 500;
+  min-height: 20px;
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================
+   OPÇÕES
+   =========================== */
+.opcoes {
+  background: #f8fafc;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.2rem;
+  margin: 1rem 0;
+}
+
+/* Slider de tamanho */
+.opcao-tamanho {
+  margin-bottom: 1.2rem;
+}
+
+.opcao-tamanho label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--cor-texto-claro);
+  margin-bottom: 8px;
+}
+
+.opcao-tamanho label strong {
+  color: var(--cor-primaria);
+  font-size: 1rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  accent-color: var(--cor-primaria);
+  cursor: pointer;
+}
+
+/* Checkboxes */
+.checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--cor-primaria);
+  cursor: pointer;
+}
+
+/* ===========================
+   BOTÃO GERAR
+   =========================== */
+.btn-gerar {
+  width: 100%;
+  padding: 14px;
+  background: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: var(--raio);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transicao), transform var(--transicao);
+  font-family: inherit;
+}
+
+.btn-gerar:hover {
+  background: var(--cor-primaria-hover);
+}
+
+.btn-gerar:active {
+  transform: scale(0.97);
+}
+
+/* ===========================
+   RESPONSIVO
+   =========================== */
+@media (max-width: 480px) {
+  .container { padding: 1.5rem 1rem; }
+  #senha { font-size: 1rem; }
+  .checkboxes { grid-template-columns: 1fr; }
+}
